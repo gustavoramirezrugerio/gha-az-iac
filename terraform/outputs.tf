@@ -1,4 +1,4 @@
 output "rg_id" {    
-    value = contoso_rg.id
+    value = azurerm_resource_group.contoso_rg.id
 }
 
