@@ -1,4 +1,4 @@
 output "rg_id" {    
-    value = contoro_rg.id
+    value = contoso_rg.id
 }
 
