@@ -1,9 +1,6 @@
-name: Bicep What-If
+name: Bicep Create
 
-on:
-  push:
-    paths:
-      - 'bicep/**'
+on: workflow_dispatch
 
 env:
   bicep_rg: Lab
@@ -19,10 +16,11 @@ jobs:
       - uses: Azure/login@v1
         with:
           creds: ${{ secrets.AZURE_CREDENTIALS }}
-      - name: run bicep whatif
+          
+      - name: run bicep create
         run: |
           cd bicep
-          az deployment group what-if -f ./main.bicep -g ${{ env.bicep_rg }}
+          az deployment group create -f ./main.bicep -g ${{ env.bicep_rg }} --name deployment-bicep --mode Complete
       
       - name: Azure Logout
         run: |
