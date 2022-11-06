@@ -1,8 +1,12 @@
 name: Terraform Plan
+#on:
+#  push:
+#    paths:
+#      - 'terraform/**'
 on:
   push:
-    paths:
-      - 'terraform/**'
+    branches: [ master ]
+
 jobs:
   terraform:
     runs-on: ubuntu-latest
