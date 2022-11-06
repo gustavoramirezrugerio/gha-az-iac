@@ -5,3 +5,4 @@ resource "azurerm_resource_group" "contoso_rg" {
   tags     = var.tags
 }
 
+
